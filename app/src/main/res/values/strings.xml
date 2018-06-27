@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidHistory</string>
+    <string name="description_image_view">corresponding version</string>
+    <string name="cupcake">Cupcake</string>
+</resources>
