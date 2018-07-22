@@ -22,20 +22,18 @@ class RecylerViewAdapter(val versions: ArrayList<version>) : RecyclerView.Adapte
 
 
     override fun onBindViewHolder(holder: AndroidViewHolder, position: Int) {
-        Log.d("RecyleAct", "" + position)
+
         val version = versions[position]
-        holder.versionImage.setImageResource(version.imageResId)
-        holder.versionName.text = version.versionName
-        holder.versionNumber.text = "Version No:${version.versionNumber}"
-        holder.APILevel.text = "API: ${version.APILevel}"
+        holder.bind(version)
     }
 
     class AndroidViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val versionImage = itemView.image
-        val versionName = itemView.tvVersionName
-        val versionNumber = itemView.tvVersionNumber
-        val APILevel = itemView.tvAPILevel
-
+        fun bind(ver: version) {
+            itemView.image.setImageResource(ver.imageResId)
+            itemView.btnVersionName.text = ver.versionName
+            itemView.tvVersionNumber.setText("Version No:${ver.versionNumber}")
+            itemView.tvAPILevel.setText("API: ${ver.APILevel}")
+        }
 
     }
 
